@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel='stylesheet'>
+    <title>Graham's Resume</title>
+    <link rel="stylesheet" href="c++.css" />
+    <link rel="stylesheet" href="default.css" />
+</head>
+<body>
+    <header>
+        <nav class="topbar">
+            <a href="index.html"><img src="images/headshot.JPG" class="thumbnail" alt="Headshot"></a>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i> 
+            </div>
+            <div class="right-links">
+                <div class="dropdown">
+                    <button class="dropbtn">ComputerScience&#9660;</button>
+                    <div class="dropdown-content">
+                        <a href="C++.html">C++</a>
+                        <a href="Python.html">Python</a>
+                        <a href="Java.html">Java</a>
+                        <a href="Sql.html">SQL</a>
+                    </div>
+                </div>
+                <a href="Solidworks.html">Engineering</a>
+                <a href="Proofs.html">Math</a>
+            </div>
+        </nav>
+        <script defer src="dropDownHeader.js"></script>
+    </header>
+    <main>
+        <div id="navbar" class="navbar">
+            <button onclick="showCode('description')">Description</button>
+            <button onclick="showCode('tic')">Tic, Tac, Toe</button>
+            <button onclick="showCode('out')">Output</button>
+        </div>
+        <div id="content" class="content">
+            <pre id="description" class="code-block">
+                This project has several functions:
+
+                    1. A set the holds the values of the 9 boxes on the board.
+                    2. A print board function that contains a for loop to display the board.
+                    3. A flipCoin funciton that takes the first name the user provides, asks that 
+                        user to choice heads or tails, and then determines the order of moves based
+                        on the coin flip.
+                    4. A move funciton that impliments the players move.
+                    5. An isVaild function that checks if the move is valid.
+                    6. A checkStatus function that determines when the game is over
+                
+                The main function is run through a while loop that continues to run until the 
+                checkStatus condition is met. 
+            </pre>
+            
+            <pre id="tic" class="code-block" style="display: none;">
+            #Tic-Tac-Toe
+
+            import random
+            board = {1:1,2:2,3:3,4:4,5:5,6:6,7:7,8:8,9:9}
+
+            def printBoard(board):
+                for i in range(1,(len(board)+1)):
+                    print(' ', board[i], ' ',end='', sep='')
+                    if(i%3 != 0):
+                        print('|', end='')
+                    elif(i != 9):
+                        print('\n---|---|--- ')
+
+            def flipCoin():
+                #Choice
+                print(name1, 'choose Heads or Tail')
+                #Validation
+                while(True):
+                        try:
+                            choice = int(input('Enter 0 for heads, and 1 for tails: '))
+                            while(True):
+                                if(choice < 0 or choice >1):
+                                    choice = int(input('Inproper input. Please try again(heads=0, tails=1): '))
+                                else:
+                                    break
+                        except ValueError:
+                            print('Inproper input. Please try again(heads=0, tails=1): ')
+                        else:
+                            break
+                #Random Flip  
+                flip = random.randint(0,1)
+                if (flip ==  0):
+                    print('Heads')
+                else:
+                    print('Tails')
+                #Assigning First Move
+                if(flip == choice):
+                    first = 0
+                    print(name1, 'makes the first move')
+                else:
+                    first = 1
+                    print(name2, 'makes the first move')
+                return first
+
+                        
+            def move(player, position):
+                board[position] = name[player]
+                
+            def isValid(position):
+                choice = True
+                #Need to check if position is already filled
+                if(0 < position < 10):
+                    if (isinstance(board[position],int)):
+                        return True
+                    else:
+                        False
+                else:
+                    return False
+                
+
+            def checkStatus():
+                #Row check
+                for i in range(2,9,3):
+                    if board[i] == 'o' and board[i-1] == 'o' and board[i+1] == 'o':
+                        return 1
+                    if board[i] == 'x' and board[i-1] == 'x' and board[i+1] == 'x':
+                        return 2
+                #Column check
+                for i in range(1,4):
+                    if board[i] == 'o' and board[i+3] == 'o' and board[i+6] == 'o':
+                        return 1
+                    if board[i] == 'x' and board[i+3] == 'x' and board[i+6] == 'x':
+                        return 2
+                #Diagonal check
+                if board[1] == 'o' and board[5] == 'o' and board[9] == 'o':
+                        return 1
+                elif board[1] == 'x' and board[5] == 'x' and board[9] == 'x':
+                        return 2
+                elif board[3] == 'o' and board[5] == 'o' and board[7] == 'o':
+                        return 1
+                elif board[3] == 'x' and board[5] == 'x' and board[7] == 'x':
+                        return 2
+                #Check if tie
+                count = 0
+                for key,value in board.items():
+                    if key == value:
+                        continue
+                    else:
+                        count+= 1
+                if count == 9:
+                    return 0
+                
+
+            #Information
+            print('***************\n')
+            print('* TIC TAC TOC *\n')
+            print('***************\n')
+
+
+            name1 = input("Please enter Player1's name: ")
+            name2 = input("Please enter Player2's name: ")
+            name = {name1:'o',name2:'x'}
+
+
+            first = flipCoin()
+
+            #Game play
+            play = True
+            print(name1, ": 'o'")
+            print(name2, ": 'x'")
+            print('\n\n***GAME STARTS***\n')
+            printBoard(board)
+
+            choice = 0
+            while(True):
+                if(first%2 == 0):
+                    while(True):
+                        try:
+                            choice = int(input("\n\n {}'s next move: o = ".format(name1)))
+                            while(not isValid(choice)):
+                                choice = int(input('IMPROPER INPUT: Integer not valid: '))
+                                isValid(choice)
+                        except ValueError:
+                            print('IMPROPER INPUT: Please try again: ')
+                        else:
+                            break
+                    move(name1, choice)
+                else:
+                    while(True):
+                        try:
+                            choice = int(input("\n\n {}'s next move: x = ".format(name2)))
+                            while(not isValid(choice)):
+                                choice = int(input('IMPROPER INPUT: Integer not valid: '))
+                                isValid(choice)
+                        except ValueError:
+                            print('IMPROPER INPUT: Please try again: ')
+                        else:
+                            break
+                    move(name2, choice)
+                first+=1
+                print('\n')
+                printBoard(board)
+                
+                #Logic to end of game
+                if(checkStatus() == 1):
+                    print('\n\n', name1, ' wins!', sep='')
+                    break
+                elif(checkStatus() == 2):
+                    print('\n\n', name2, ' wins!', sep='')
+                    break
+                elif(checkStatus() == 0):
+                    print('\n\n Tie')
+                    break
+                
+            print('Game over!')
+            </pre>
+            <pre id="out" class="code-block" style="display: none;">
+                ***************
+
+                * TIC TAC TOE *
+                
+                ***************
+                
+                Please enter Player1's name: Kevin
+                Please enter Player2's name: Emily
+                Kevin choose Heads or Tail
+                Enter 0 for heads, and 1 for tails: 0
+                Heads
+                Kevin makes the first move
+                Kevin : 'o'
+                Emily : 'x'
+                
+                
+                ***GAME STARTS***
+                
+                 1 | 2 | 3 
+                ---|---|--- 
+                 4 | 5 | 6 
+                ---|---|--- 
+                 7 | 8 | 9 
+                
+                 Kevin's next move: o = 3
+                
+                
+                 1 | 2 | o 
+                ---|---|--- 
+                 4 | 5 | 6 
+                ---|---|--- 
+                 7 | 8 | 9 
+                
+                 Emily's next move: x = 5
+                
+                
+                 1 | 2 | o 
+                ---|---|--- 
+                 4 | x | 6 
+                ---|---|--- 
+                 7 | 8 | 9 
+                
+                 Kevin's next move: o = 2
+                
+                
+                 1 | o | o 
+                ---|---|--- 
+                 4 | x | 6 
+                ---|---|--- 
+                 7 | 8 | 9 
+                
+                 Emily's next move: x = 1
+                
+                
+                 x | o | o 
+                ---|---|--- 
+                 4 | x | 6 
+                ---|---|--- 
+                 7 | 8 | 9 
+                
+                 Kevin's next move: o = 9
+                
+                
+                 x | o | o 
+                ---|---|--- 
+                 4 | x | 6 
+                ---|---|--- 
+                 7 | 8 | o 
+                
+                 Emily's next move: x = 4
+                
+                
+                 x | o | o 
+                ---|---|--- 
+                 x | x | 6 
+                ---|---|--- 
+                 7 | 8 | o 
+                
+                 Kevin's next move: o = 6
+                
+                
+                 x | o | o 
+                ---|---|--- 
+                 x | x | o 
+                ---|---|--- 
+                 7 | 8 | o 
+                
+                Kevin wins!
+                Game over!
+            </pre>
+            
+        </div>
+    </main>
+    <script src="c++.js"></script>
+    <footer>
+        <div class="footer-box">
+            <div class="blue-footer">
+                <a href="Videos.html">Videos</a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <a href="Achievements.html">Achievements</a>
+        </div>
+        <div class="footer-box">
+            <a href="Contact.html">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>

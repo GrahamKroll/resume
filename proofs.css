@@ -1,0 +1,42 @@
+/* Proofs styles */
+.proofs-main {
+    background-image: url('images/math_background.webp'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: cover; /* Cover the entire element with the background image */
+    background-position: center; /* Center the background image */
+    min-height: 100vh; /* Ensures that main fills the screen vertically */
+    margin-bottom: 4.5%;
+ }
+ .proofs-main h1 {
+    text-align: center;
+    color: #ffffff;
+    margin: 2.5%;
+ }
+ 
+ /* PDF Container */
+ .pdf-container {
+    padding: 2%;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+ }
+ .pdf-container p {
+    font-weight: bold;
+    width: 50%;
+    margin: 30px auto;
+ }
+ .download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4578c0;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+ }
+ .download-btn:hover {
+    background-color: #4578c053;
+ }
+ @media screen and (max-width: 860px) {
+   .proofs-main {
+       margin-bottom: 12%;
+   }
+}

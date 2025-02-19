@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel='stylesheet'>
+    <title>Graham's Resume</title>
+    <link rel="stylesheet" href="aboutMe.css" />
+    <link rel="stylesheet" href="default.css" />
+</head>
+<body>
+    <header>
+        <nav class="topbar">
+            <a href="index.html"><img src="images/headshot.JPG" class="thumbnail" alt="Headshot"></a>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i> 
+            </div>
+            <div class="right-links">
+                <div class="dropdown">
+                    <button class="dropbtn">ComputerScience&#9660;</button>
+                    <div class="dropdown-content">
+                        <a href="C++.html">C++</a>
+                        <a href="Python.html">Python</a>
+                        <a href="Java.html">Java</a>
+                        <a href="Sql.html">SQL</a>
+                    </div>
+                </div>
+                <a href="Solidworks.html">Engineering</a>
+                <a href="Proofs.html">Math</a>
+            </div>
+        </nav>
+        <script defer src="dropDownHeader.js"></script>
+    </header>
+    <main class="aboutMe-main">
+        <section class="profile">
+            <div class="description">
+                <h2><b>About Me</b></h2>
+                <p>My name is Graham Kroll and am currently attending Dallas Baptist 
+                    University (DBU) as a student athlete with the intent to double 
+                    major in Mathematics and Computer Science and a minor in Mechanical 
+                    Engineering. My goal is to attain a master's in Bio-mechanical 
+                    engineering after graduating from DBU (current GPA 3.96 on 140 
+                    credit hours).</p>
+            </div>
+            <img src="images\headshot.JPG" class="headshot" alt="Headshot">
+        </section>        
+        <section class="skills-table">
+            <table>
+                <tr>
+                    <th colspan="3" class="table-header">Skills Table</th>
+                </tr>
+                <tr>
+                    <th>Computer Science</th>
+                    <th>Engineering</th>
+                    <th>Math</th>
+                </tr>
+                <tr>
+                    <td>C++</td>
+                    <td>Gear Box</td>
+                    <td>Green's Theorem</td>
+                </tr>
+                <tr>
+                    <td>Java</td>
+                    <td>Candle Stick</td>
+                    <td>Curve Fitting</td>
+                </tr>
+                <tr>
+                    <td>Python</td>
+                    <td>Drone Design</td>
+                    <td>Statistical Confidence</td>
+                </tr>
+                <tr>
+                    <td>SQL</td>
+                    <td>Muffler Housing</td>
+                    <td>Quadratic Approximation</td>
+                </tr>
+            </table>
+        </section>        
+    </main>
+    <footer>
+        <div class="footer-box">
+            <div class="blue-footer">
+                <a href="Videos.html">Videos</a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <a href="Achievements.html">Achievements</a>
+        </div>
+        <div class="footer-box">
+            <a href="Contact.html">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>

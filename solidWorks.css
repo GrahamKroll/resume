@@ -1,0 +1,43 @@
+/* Soildworks styles */
+.Solidworks-Main {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 5%; /* Add some space at the top */
+   margin: 0 5%; /* Add some margin to the sides */
+}
+
+.SolidWorks-Project {
+   margin-bottom: 25px; /* Increase margin between sections */
+   width: 100%;
+   max-width: 800px; /* Limit the maximum width */
+   border-radius: 10px;
+   text-align: center;
+}
+
+.SolidWorks-Project h3 {
+   margin-bottom: 10px;
+   text-align: center; /* Center align the heading */
+}
+
+.SolidWorks-Project p {
+   margin-bottom: 20px; /* Add margin below paragraphs */
+}
+
+.SolidWorks-Project img {
+   max-width: 100%;
+   height: auto;
+   border-radius: 5px;
+   margin-top: 10px; /* Add some margin at the top */
+}
+
+h2{
+   margin-bottom: 5%;
+}
+
+/* Add media query for screens below 768px */
+@media screen and (max-width: 768px) {
+   .Solidworks-Main{
+       margin-bottom: 10%;
+   }
+}

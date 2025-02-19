@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel='stylesheet'>
+    <title>Graham's Resume</title>
+    <link rel="stylesheet" href="videos.css" />
+    <link rel="stylesheet" href="default.css" />
+</head>
+<body>
+    <header>
+        <nav class="topbar">
+            <a href="index.html"><img src="images/headshot.JPG" class="thumbnail" alt="Headshot"></a>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i> 
+            </div>
+            <div class="right-links">
+                <div class="dropdown">
+                    <button class="dropbtn">ComputerScience&#9660;</button>
+                    <div class="dropdown-content">
+                        <a href="C++.html">C++</a>
+                        <a href="Python.html">Python</a>
+                        <a href="Java.html">Java</a>
+                        <a href="Sql.html">SQL</a>
+                    </div>
+                </div>
+                <a href="Solidworks.html">Engineering</a>
+                <a href="Proofs.html">Math</a>
+            </div>
+        </nav>
+        <script defer src="dropDownHeader.js"></script>
+    </header>
+    <main class="video-main">
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+              <video controls>
+                    <source src="images/Drone Working.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+              <div class="text">Quadcopter turning on for the first time.</div>
+            </div>
+          
+            <div class="mySlides fade">
+                <video controls>
+                    <source src="images/Aurdino_DCMotor.mp4" type="video/mp4">
+                </video>
+              <div class="text">This is a simple curcuit of an Ardunio board, breadboard, and a DC motor.</div>
+            </div>
+            <div class="mySlides fade">
+                <video controls>
+                    <source src="images/LandRover.mp4" type="video/mp4">
+                </video>
+              <div class="text">A simple land rover using Arudino board, motor controller, and two DC motors </div>
+            </div>
+          
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+          
+          <!-- The dots/circles -->
+          <div style="text-align:center" class="dot-housing">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+        </div>
+    </main>
+    <script src="Gallery.js"></script>
+    <footer>
+        <div class="footer-box">
+            <div class="blue-footer">
+                <a href="Videos.html">Videos</a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <a href="Achievements.html">Achievements</a>
+        </div>
+        <div class="footer-box">
+            <a href="Contact.html">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>

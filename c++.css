@@ -1,0 +1,72 @@
+body {
+    background-color: #f4f4f4;
+    color: #3c4142;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#diagram img {
+    max-width: 60vw;
+    display: flex;
+    justify-content: center; /* Align items in the center horizontally */
+    align-items: center; /* Align items in the center vertically */
+}
+
+.navbar {
+    background: #4578c0;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.navbar button {
+    background: #3c4142;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+}
+
+.navbar button:hover {
+    background: #555;
+}
+
+.content {
+    padding: 20px;
+    background: #f4f4f4;
+    min-height: 200px;
+}
+
+.code-block {
+    background: #e0e0e0;
+    border-left: 5px solid #3c4142;
+    padding: 10px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    color: #3c4142;
+    font-family: monospace;
+}
+
+.code-block pre{
+    text-align: left;
+}
+
+#diagram img{
+    max-width: 60vw; /* Restrict maximum width to 60% of the viewport width */
+    height: auto; /* Maintain aspect ratio */
+}
+/* Add media query for screens below 768px */
+@media screen and (max-width: 860px) {
+    .navbar button {
+        margin: 1%; /* Add 2% margin around the navbar buttons */
+    }
+    main{
+        margin-bottom: 10%;
+    }
+}

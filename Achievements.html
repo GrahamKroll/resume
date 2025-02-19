@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel='stylesheet'>
+    <title>Graham's Resume</title>
+    <link rel="stylesheet" href="achievements.css" />
+    <link rel="stylesheet" href="default.css" />
+</head>
+<body>
+    <header>
+        <nav class="topbar">
+            <a href="index.html"><img src="images/headshot.JPG" class="thumbnail" alt="Headshot"></a>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i> 
+            </div>
+            <div class="right-links">
+                <div class="dropdown">
+                    <button class="dropbtn">ComputerScience&#9660;</button>
+                    <div class="dropdown-content">
+                        <a href="C++.html">C++</a>
+                        <a href="Python.html">Python</a>
+                        <a href="Java.html">Java</a>
+                        <a href="Sql.html">SQL</a>
+                    </div>
+                </div>
+                <a href="Solidworks.html">Engineering</a>
+                <a href="Proofs.html">Math</a>
+            </div>
+        </nav>
+        <script defer src="dropDownHeader.js"></script>
+    </header>
+    <main>
+        <div id="imageContainer" class="image-container">
+            <div class="image-group">
+                <div class="image-wrapper">
+                    <img src="images/Basketball.jpg" class="thumb" alt="Basketball">
+                    <div class="description-box">
+                        <b>Athletic</b><br>
+                        In my three years on the DBU Basketball we have made it to the national tournament twice and won one Eastern conference title. I have also received the Timothy award for Christian athletes who display excellence in their sport.
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <img src="images/Speaking.jpg" class="thumb" alt="Speaking">
+                    <div class="description-box">
+                        <b>Professional</b><br>
+                        Through DBU I have been blessed with the opportunity to speak the Tim Tebow Event reception dinner and have also received the opportunity to intern this summer at Holt Lunsford Commercial.
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <img src="images/Education.jpeg" class="thumb" alt="Education">
+                    <div class="description-box">
+                        <b>Educational</b><br>
+                        Through my 3 years at DBU, I have been on the presidents list every semester and have mantained a GPA of 3.96 on over 140 credit hour while gaining experience in the fields of Mathematics, Computer Science, and Engineering.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption" class="modal-desc"></div>
+            <div id="description" class="description"></div>
+        </div>
+    </main>    
+    <script src="achievements.js"> </script>
+    <footer>
+        <div class="footer-box">
+            <div class="blue-footer">
+                <a href="Videos.html">Videos</a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <a href="Achievements.html">Achievements</a>
+        </div>
+        <div class="footer-box">
+            <a href="Contact.html">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>

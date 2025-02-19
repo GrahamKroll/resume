@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel='stylesheet'>
+    <title>Graham's Resume</title>
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="default.css" />
+</head>
+<body>
+    <header>
+        <nav class="topbar">
+            <a href="index.html"><img src="images/headshot.JPG" class="thumbnail" alt="Headshot"></a>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i> 
+            </div>
+            <div class="right-links">
+                <div class="dropdown">
+                    <button class="dropbtn">ComputerScience&#9660;</button>
+                    <div class="dropdown-content">
+                        <a href="C++.html">C++</a>
+                        <a href="Python.html">Python</a>
+                        <a href="Java.html">Java</a>
+                        <a href="Sql.html">SQL</a>
+                    </div>
+                </div>
+                <a href="Solidworks.html">Engineering</a>
+                <a href="Proofs.html">Math</a>
+            </div>
+        </nav>
+        <script defer src="dropDownHeader.js"></script>
+    </header>
+    <main class="contact-main" id="main-content">
+        <section class="contact-image-section">
+            <img src="images/Contact.jpg" alt="Contact" class="contact-image">
+        </section>
+        <section class="contact-info-section">
+            <div class="contact-info-content">
+                <div class="contact-info-text">
+                    <h2>How to reach me</h2>
+                    <p>Phone #: <a href="tel:720-505-0100">720-505-0100</a></p>
+                    <p>Email: <a href="mailto:grahamjkroll@gmail.com" style="color: blue;">grahamjkroll@gmail.com</a></p>
+                    <p>Linkedin: <a href="http://linkedin.com/in/graham-kroll-2683b6291" style="color: blue;">Graham Kroll</a></p>
+                </div>
+                <div>
+                    
+                        <img src="images/InstragramQR.jpg" class="thumb" id="QRcode" alt="QR Code Thumbnail">
+                    
+                </div>
+                <h3>Get added to my email list to be notified on updates to this website</h3>
+                <form id="emailForm" action="#" method="post">
+                    <div class="label-container">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="heard">How you heard about this website:</label>
+                        <input type="heard" id="heard" name="heard">
+                    </div>
+                    <div class="button-container">
+                        <input type="submit" value="Subscribe" id="submitButton">
+                        <input type="button" value="Cancel" id="cancelButton">
+                    </div>
+                    <span id="message"></span>
+                </form>
+            </div>
+        </section>
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <a href="https://www.instagram.com/grahamkroll?igsh=anJ3dWQ5cjJyMnEx">
+                <img class="modal-content" id="img01">
+            </a>
+        </div>
+        <script defer src="contact.js"></script>
+        <script defer src="achievements.js"></script>
+    </main>     
+    <footer>
+        <div class="footer-box">
+            <div class="blue-footer">
+                <a href="Videos.html">Videos</a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <a href="Achievements.html">Achievements</a>
+        </div>
+        <div class="footer-box">
+            <a href="Contact.html">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,144 @@
+/* Contact Page */
+.contact-main {
+    display: flex;
+    background: none;
+    margin-top: 3%;
+}
+
+.contact-image-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-image {
+    border: 2px solid lightgrey;
+    height: 60vh;
+    width: auto;
+    padding: 3%;
+    margin: 3%;
+}
+
+.contact-info-content {
+    background-color: lightgrey;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.contact-info-text {
+    text-align: center;
+}
+
+.email-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.email-form h3 {
+    margin-top: 20px;
+}
+
+.label-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-container input {
+    margin-left: 10px;
+}
+
+#message{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#QRcode {
+    width: 10%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 2% auto; /* Center the QR code horizontally with 2% margin */
+    display: block; /* Ensure it's a block element for margin to work */
+}
+
+.thumb:hover {
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+}
+
+.modal-desc {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Media query for screens under 768px */
+@media screen and (max-width: 768px) {
+    .contact-main {
+        flex-direction: column; /* Change to column layout */
+        align-items: center; /* Center items horizontally */
+        margin-bottom: 8%;
+    }
+
+    .contact-image-section,
+    .contact-info-section {
+        width: 100%; /* Set width to 100% */
+    }
+    #QRcode {
+        width: 50vw;
+        margin: 3% auto;
+    }
+}
+

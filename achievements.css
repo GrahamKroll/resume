@@ -1,0 +1,95 @@
+.image-container {
+    display: flex;
+    justify-content: center;
+    padding: 3% 0;
+    margin-bottom: 5%;
+}
+
+.image-group {
+    display: flex;
+    align-items: flex-start; /* Align items at the start */
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.image-wrapper {
+    margin: 0 50px;
+    text-align: center;
+}
+
+.thumb {
+    width: 300px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px; 
+    transition: transform 0.3s ease;
+}
+
+.description-box {
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    padding: 3%; /* Increase padding for better readability */
+    width: 300px; /* Set width to match image width */
+    margin-bottom: 8%;
+}
+
+.thumb:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+}
+
+.modal-desc {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Media query for screens under 768px */
+@media screen and (max-width: 768px) {
+    .image-wrapper {
+        margin: 0 auto; /* Center the image wrappers horizontally */
+        margin-bottom: 10%; /* Add margin-bottom for spacing */
+    }
+    .image-container {
+        flex-direction: column; /* Change flex-direction to column */
+        align-items: center; /* Center items horizontally */
+    }
+    .image-group{
+        display: block;
+    }
+}

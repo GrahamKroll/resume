@@ -1,0 +1,97 @@
+/* Profile styles */
+.profile {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   padding: 2%;
+   text-align: left;
+}
+
+.description {
+   width: 40%;
+   min-width: 150px;
+   vertical-align: text-top;
+   margin-left: 5%;
+   margin-right: 0; /* Adjust margin to remove space between the description and headshot */
+   flex-direction: column;
+}
+
+.headshot {
+   width: 30%;
+   height: auto;
+   margin: 5% 0; /* Adjust margin to remove space between the headshot and the about me box */
+   align-items: center;
+   background-color: #f0f0f0;
+   border-radius: 50%;
+}
+
+.skills-table {
+   display: flex; /* Use flexbox to align items vertically */
+   flex-direction: column; /* Stack items vertically */
+   justify-content: center; /* Center items vertically */
+   align-items: center; /* Center items horizontally */
+   width: 100%; /* Set the table width to 100% of the container */
+   margin: 0 auto; /* Center the table horizontally */
+   margin-bottom: 10%;
+   overflow-x: auto; /* Add horizontal scroll if needed */
+}
+
+/* Border styles */
+th,
+td {
+   padding: 10px; /* Add padding to table cells */
+   text-align: center; /* Center align text in table cells */
+   border: 2px solid #3c4142; /* Add border to table cells */
+}
+
+/* Alternate row colors */
+tr:nth-child(even) {
+   background-color: #f2f2f2; /* Light grey background for even rows */
+   color: #000000;
+}
+
+tr:nth-child(odd) {
+   background-color: #ffffff;
+   color: #000000;
+}
+
+/* Head row background color */
+table th {
+   background-color: #4578c0; /* Blue background color for table headers */
+   color: white; /* White text color for table headers */
+}
+.table-header {
+   background-color: #757575; /* Grey background */
+   color: white; /* White text */
+   text-align: center; /* Center text horizontally */
+}
+
+table {
+   border-collapse: collapse; /* Collapse border spacing */
+   width: 90%; /* Adjust width as needed */
+   border: 2px solid #3c4142;
+}
+
+/* Media query for screens less than 768px */
+@media screen and (max-width: 768px) {
+   .profile {
+       flex-direction: column; /* Stack elements vertically */
+       align-items: center; /* Center items horizontally */
+       text-align: center; /* Center text */
+   }
+
+   .headshot {
+       width: 50%; /* Adjust width for smaller screens */
+       margin-bottom: 10%; /* Add bottom margin */
+   }
+
+   .description {
+       width: 80%; /* Adjust width for smaller screens */
+       margin-left: auto; /* Align to center */
+       margin-right: auto; /* Align to center */
+   }
+   .aboutMe-main{
+      margin-bottom: 10%;
+   }
+}

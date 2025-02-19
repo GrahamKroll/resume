@@ -1,0 +1,213 @@
+/* General styling reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Including padding and border in element's total width and height */
+    font-family: Georgia, Arial, Helvetica, sans-serif;
+}
+
+/* Body styles */
+body {
+    width: 100%;
+    height: auto;
+    background: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    background-color: #3c4142;
+    padding: 15px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Thumbnail styles for headshots */
+.thumbnail {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding-left: 1%;
+}
+
+/* Topbar configurations */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+/* Right-links configurations using flexbox */
+.right-links {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+}
+
+/* Style adjustments for links and dropdown button */
+.topbar a, .dropbtn {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+}
+
+.topbar a:hover, .dropdown-content a:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Dropdown configurations */
+.dropdown {
+    position: relative;
+    display: inline-block; /* This could be changed to flex if needed */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    color: #3c4142;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #3c4142;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Display dropdown on hover */
+}
+
+.dropbtn {
+    background-color: #3c4142;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn::after {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* Footer styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3c4142;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-box {
+    flex: 1; /* Make all footer boxes take up equal space */
+    
+}
+
+.footer-box a {
+    color: #3c4142; /* Set text color */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+.blue-footer a {
+    color: #ffffff; /* Set the text color to black for links except the first one */
+    background-color: #4578c0;
+}
+
+.menu-icon {
+    display: none;
+    color: #ffffff; /* Icon color */
+    cursor: pointer;
+}
+
+
+/*Media changes*/
+@media screen and (max-width: 768px) {
+    .topbar .right-links {
+        display: none; /* Hide the links by default */
+        position: absolute;
+        top: 60px; /* Height of the navbar */
+        left: 0;
+        right: 0; /* Stretch across the full width of the viewport */
+        background-color: #4578c0; /* Updated background color */
+        margin-top: 3%; /* 3% margin from the top */
+        z-index: 1000; /* Ensure the dropdown is below the menu icon but above other content */
+    }
+
+    .dropdown {
+        display: block; /* Show dropdown button */
+        
+    }
+
+    .dropdown-content {
+        display: none; /* Keep dropdown content hidden until clicked */
+        position: absolute;
+        right: 0; /* Align dropdown menu to the right side */
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .menu-icon {
+        display: block; /* Show the menu icon */
+        position: absolute;
+        right: 30px; /* Adjust as necessary for spacing on the right */
+        z-index: 1002; /* Ensure the menu icon is above the nav-links */
+    }
+
+    .topbar .right-links {
+        display: none; /* Hide the links by default */
+        position: absolute;
+        top: 60px; /* Height of the navbar */
+        left: 0;
+        right: 0; /* Stretch across the full width of the viewport */
+        background-color: #000e27; /* Same as navbar color */
+        z-index: 1000; /* Ensure the dropdown is below the menu icon but above other content */
+    }
+
+    .topbar .right-links.active {
+        display: flex; /* Show the links when active */
+        flex-direction: column; /* Stack the links vertically */
+        align-items: center; /* Center alignment of links */
+        padding-top: 0; /* No padding on top of the first link */
+        width: 100%;
+        background-color: #3c4142;
+    }
+
+    .topbar .right-links .dropdown-content {
+        width: 100%; /* Full width */
+        text-align: center; /* Center the text */
+        padding: 12px 0; /* Vertical padding for tap targets */
+        margin: 0; /* No margin to prevent gaps */
+        border-bottom: 1px solid #ffffff; /* If you want a separator, apply it at the bottom */
+    }
+
+    
+}

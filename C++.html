@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel='stylesheet'>
+    <title>Graham's Resume</title>
+    <link rel="stylesheet" href="c++.css" />
+    <link rel="stylesheet" href="default.css" />
+</head>
+<body>
+    <header>
+        <nav class="topbar">
+            <a href="index.html"><img src="images/headshot.JPG" class="thumbnail" alt="Headshot"></a>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i> 
+            </div>
+            <div class="right-links">
+                <div class="dropdown">
+                    <button class="dropbtn">ComputerScience&#9660;</button>
+                    <div class="dropdown-content">
+                        <a href="C++.html">C++</a>
+                        <a href="Python.html">Python</a>
+                        <a href="Java.html">Java</a>
+                        <a href="Sql.html">SQL</a>
+                    </div>
+                </div>
+                <a href="Solidworks.html">Engineering</a>
+                <a href="Proofs.html">Math</a>
+            </div>
+        </nav>
+        <script defer src="dropDownHeader.js"></script>
+    </header>
+    <main>
+        <div id="navbar" class="navbar">
+            <button onclick="showCode('description')">Description</button>
+            <button onclick="showCode('rock')">Rock, Paper, Scissors</button>
+            <button onclick="showCode('scores')">Test Scores</button>
+            <button onclick="showCode('pointers')">Pointers</button>
+        </div>
+        <div id="content" class="content">
+            <pre id="description" class="code-block">
+                These programs use C++ to do the following:
+        
+                    1. Create a best of 7 game of rock paper scissors with random numbers generated 
+                       for the computer. The catch is that once you win 4 times, the code changes so
+                       that you can no longer win.
+                    2. This code calculates the average for a given set of scores input by the user.
+                    3. This program uses dynamically allocated arrays to find the average of monthly sales.
+                    
+                Enjoy!
+            </pre>
+            
+            <pre id="rock" class="code-block" style="display: none;">
+                
+                #include &lt;iostream&gt;
+                #include &lt;cstdlib&gt;
+                using namespace std;
+                
+                int main()
+                {
+                    int rounds = 0;      //keep count of rounds
+                    int my_wins = 0;    //tracks my win
+                    int cpu_wins = 0;    //tracks computer's wins
+                    int my_choice, 
+                        cpu_choice;      
+                
+                    cout &lt;&lt; "Enter 1 for rock, 2 for paper, and 3 for scissors." &lt;&lt; endl &lt;&lt; endl;
+                    
+                    while (my_wins &lt; 3 && cpu_wins &lt; 4) 
+                    {
+                        
+                        //Display round and ask for choice
+                        cout &lt;&lt; "Round " &lt;&lt; ++rounds &lt;&lt; ":" &lt;&lt; endl;
+                        cout &lt;&lt; "Your move: ";
+                        cin >> my_choice;
+                
+                        //Generate number for computer choice
+                        do
+                        {
+                            cpu_choice = (rand() % 3) + 1;
+                        }while (cpu_choice == my_choice);
+                
+                        //Display choices
+                        cout &lt;&lt; "Computer's move: " &lt;&lt; cpu_choice &lt;&lt; endl;
+                
+                
+                        //Logic for all possible choices
+                        if (my_choice == 1) //For my_choice rock
+                        {
+                            cout &lt;&lt; "You chose rock" &lt;&lt; endl;
+                            if (cpu_choice == 2)    //if cpu chooses paper
+                            {
+                                cout &lt;&lt; "Paper beats rock" &lt;&lt; endl
+                                &lt;&lt; "You lose!" &lt;&lt; endl;
+                                cpu_wins++;
+                                cout &lt;&lt; "Your score: " &lt;&lt; my_wins &lt;&lt; endl;
+                                cout &lt;&lt; "Computer score: " &lt;&lt; cpu_wins &lt;&lt; endl;
+                            }
+                            else if (cpu_choice == 3) //if cpu chooses scissors
+                            {
+                                cout &lt;&lt; "Rock beats scissors" &lt;&lt; endl
+                                    &lt;&lt; "You win!" &lt;&lt; endl;
+                                my_wins++;
+                                cout &lt;&lt; "Your score: " &lt;&lt; my_wins &lt;&lt; endl;
+                                cout &lt;&lt; "Computer score: " &lt;&lt; cpu_wins &lt;&lt; endl;
+                            }
+                        }
+                        else if (my_choice == 2) //For my_choice paper
+                        {
+                            cout &lt;&lt; "You chose paper" &lt;&lt; endl;
+                            if (cpu_choice == 1) //if cpu chooses rock
+                            {
+                                cout &lt;&lt; "Paper beats rock" &lt;&lt; endl
+                                    &lt;&lt; "You win!" &lt;&lt; endl;
+                                my_wins++;
+                                cout &lt;&lt; "Your score: " &lt;&lt; my_wins &lt;&lt; endl;
+                                cout &lt;&lt; "Computer score: " &lt;&lt; cpu_wins &lt;&lt; endl;
+                            }
+                            else if (cpu_choice == 3) //if cpu chooses scissors
+                            {
+                                cout &lt;&lt; "Scissors beats paper" &lt;&lt; endl
+                                    &lt;&lt; "You lose!" &lt;&lt; endl;
+                                cpu_wins++;
+                                cout &lt;&lt; "Your score: " &lt;&lt; my_wins &lt;&lt; endl;
+                                cout &lt;&lt; "Computer score: " &lt;&lt; cpu_wins &lt;&lt; endl;
+                            }
+                        }
+                        else if (my_choice == 3) //For my_choice scissors
+                        {
+                            cout &lt;&lt; "You chose scissors" &lt;&lt; endl;
+                            if (cpu_choice == 1) //if cpu chooses rock
+                            {
+                                cout &lt;&lt; "Rock beats scissors" &lt;&lt; endl
+                                    &lt;&lt; "You lose!" &lt;&lt; endl;
+                                cpu_wins++;
+                                cout &lt;&lt; "Your score: " &lt;&lt; my_wins &lt;&lt; endl;
+                                cout &lt;&lt; "Computer score: " &lt;&lt; cpu_wins &lt;&lt; endl;
+                            }
+                            else if (cpu_choice == 2) //if cpu chooses paper
+                            {
+                                cout &lt;&lt; "Scissors beats paper" &lt;&lt; endl
+                                    &lt;&lt; "You win!" &lt;&lt; endl;
+                                my_wins++;
+                                cout &lt;&lt; "Your score: " &lt;&lt; my_wins &lt;&lt; endl;
+                                cout &lt;&lt; "Computer score: " &lt;&lt; cpu_wins &lt;&lt; endl;
+                            }
+                        }
+                        else if (my_choice == cpu_choice)
+                        {
+                            cout &lt;&lt; "You have tied. Play another round.";
+                            break;
+                        }
+                        
+                        cout &lt;&lt; endl &lt;&lt; endl;
+                
+                    }
+                
+                    while (my_wins == 3 && cpu_wins != 4)
+                    {
+                        //Display round and ask for choice
+                        cout &lt;&lt; "Round " &lt;&lt; ++rounds &lt;&lt; ":" &lt;&lt; endl;
+                        cout &lt;&lt; "Your move: ";
+                        cin >> my_choice;
+                
+                        //Logic so computer always wins    
+                        if (my_choice == 1) //For my_choice rock
+                        {
+                            cpu_choice = 2;
+                            cout &lt;&lt; "Computer's move :" &lt;&lt; cpu_choice &lt;&lt; endl
+                                &lt;&lt; "Paper beats rock" &lt;&lt; endl
+                                &lt;&lt; "You lose!" &lt;&lt; endl;
+                            cpu_wins++;
+                            cout &lt;&lt; "Your score: " &lt;&lt; my_wins &lt;&lt; endl;
+                            cout &lt;&lt; "Computer score: " &lt;&lt; cpu_wins &lt;&lt; endl;
+                        }
+                        else if (my_choice == 2) //For my_choice paper
+                        {
+                            cpu_choice = 3;
+                            cout &lt;&lt; "Computer's move :" &lt;&lt; cpu_choice &lt;&lt; endl
+                                &lt;&lt; "Scissors beats paper" &lt;&lt; endl
+                                &lt;&lt; "You lose!" &lt;&lt; endl;
+                            cpu_wins++;
+                            cout &lt;&lt; "Your score: " &lt;&lt; my_wins &lt;&lt; endl;
+                            cout &lt;&lt; "Computer score: " &lt;&lt; cpu_wins &lt;&lt; endl;
+                        }
+                        else if (my_choice == 3) //For my_choice scissors
+                        {
+                            cpu_choice = 1;
+                            cout &lt;&lt; "Computer's move :" &lt;&lt; cpu_choice &lt;&lt; endl
+                                &lt;&lt; "Rock beats scissors" &lt;&lt; endl
+                                &lt;&lt; "You lose!" &lt;&lt; endl;
+                            cpu_wins++;
+                            cout &lt;&lt; "Your score: " &lt;&lt; my_wins &lt;&lt; endl;
+                            cout &lt;&lt; "Computer score: " &lt;&lt; cpu_wins &lt;&lt; endl;
+                        }
+                
+                        cout &lt;&lt; endl &lt;&lt; endl;
+                
+                    }
+                
+                    cout &lt;&lt; "!!!GAME OVER!!!" &lt;&lt; endl
+                        &lt;&lt; "I WIN!" &lt;&lt; endl
+                        &lt;&lt; "YOU LOSE! Ha Ha!" &lt;&lt; endl
+                        &lt;&lt; "Want to try again?" &lt;&lt; endl
+                        &lt;&lt; "Bye!" &lt;&lt; endl;
+                
+                    return 0;
+                }
+            </pre>
+            <pre id="scores" class="code-block" style="display: none;">
+                LAB 7.1 - Exercise 2
+                PROGRAM
+                
+                //Lab 7.1
+                
+                
+                // This program will read in a group of test scores (positive integers from 1 to 100)
+                // from the keyboard and then calculate and output the average score
+                // as well as the highest and lowest score. There will be a maximum of 100 scores.
+                
+                //Graham Kroll
+                
+                #include &lt;&lt;iostream&gt;
+                using namespace std;
+                
+                typedef int GradeType[100];      //declares a new data type:
+                                // an integer array of 100 elements
+                
+                
+                
+                float findAverage(const GradeType, int);
+                int findHighest(const GradeType, int);
+                int findLowest(const GradeType, int);
+                
+                int main()
+                {
+                    GradeType grades;        //the array holding the grades
+                    int numberOfGrades;        //the number of grades read
+                    int pos;                //index to the array
+                    float avgOfGrades;        //contains the average of the grades
+                    int highestGrade;        //contains the highest grade
+                    int lowestGrade;        //contains the lowest grade
+                    
+                
+                    //Read in the values into the array
+                    pos = 0;
+                    cout &lt;&lt; "Please input a grade from 1 to 100, (or -99 to stop)" &lt;&lt; endl;
+                    cin >> grades[pos];
+                
+                    while (grades[pos] != -99)
+                    {
+                        pos++;
+                        cout &lt;&lt; "Please put in the " &lt;&lt;  (pos+1) &lt;&lt; " grade or -99 to stop." &lt;&lt; endl;
+                        cin >> grades[pos];
+                    }
+                
+                    numberOfGrades = pos;
+                
+                    //Output of average, highest, and lowest values
+                
+                    avgOfGrades = findAverage(grades, numberOfGrades);
+                
+                    cout &lt;&lt; endl &lt;&lt; "The average of all the grades is " &lt;&lt; avgOfGrades &lt;&lt; endl;
+                
+                    highestGrade = findHighest(grades, numberOfGrades);
+                
+                    cout &lt;&lt; endl &lt;&lt; "The highest grade is " &lt;&lt; highestGrade &lt;&lt; endl;
+                
+                    lowestGrade = findLowest(grades, numberOfGrades);
+                
+                    cout &lt;&lt; endl &lt;&lt; "The lowest grade is " &lt;&lt; lowestGrade &lt;&lt; endl;
+                
+                
+                    return 0;
+                }
+                
+                //********************************************************************************
+                // findAverage
+                //
+                // task:          This function receives an array of integers and its size.
+                //                It finds and returns the average of the numbers in the array
+                // data in:       array of floating point numbers
+                // data returned: average of the numbers in the array
+                //
+                //********************************************************************************
+                
+                float findAverage(const GradeType array, int size)
+                {
+                    float sum = 0;
+                
+                    for (int pos = 0; pos &lt; size; pos++)
+                        sum += array[pos];
+                
+                    return (sum / size);
+                }
+                
+                //****************************************************************************
+                // findHighest
+                //
+                // task:          This function receives an array of integers and its size.
+                //                It finds and returns the highest value of the numbers in 
+                //                the array
+                // data in:       array of floating point numbers
+                // data returned: highest value of the numbers in the array
+                //
+                //****************************************************************************
+                
+                int findHighest(const GradeType array, int size)
+                {
+                    int highest;
+                    highest = array[0];
+                
+                    for (int index = 0; index &lt; size; index++)
+                    {
+                        if (array[index] > highest)
+                        {
+                            highest = array[index];
+                        }
+                    }
+                    return highest;
+                }
+                
+                //****************************************************************************
+                // findLowest
+                //
+                // task:          This function receives an array of integers and its size.
+                //                It finds and returns the lowest value of the numbers in 
+                //                the array
+                // data in:       array of floating point numbers
+                // data returned: lowest value of the numbers in the array
+                //
+                //****************************************************************************
+                
+                int findLowest(const GradeType array, int size)
+                {
+                    int lowest;
+                    lowest = array[0];
+                
+                    for (int index = 0; index &lt; size; index++)
+                    {
+                        if (array[index] &lt; lowest)
+                            lowest = array[index];
+                    }
+                    return lowest;
+                }
+                
+                
+                
+                
+                
+                
+                OUTPUT
+                
+                Please input a grade from 1 to 100, (or -99 to stop)
+                90
+                Please put in the 2nd grade or -99 to stop.
+                45
+                Please put in the 3rd grade or -99 to stop.
+                73
+                Please put in the 4th grade or -99 to stop.
+                62
+                Please put in the 5th grade or -99 to stop.
+                -99
+                
+                The average of all the grades is 67.5
+                
+                The highest grade is 90
+                
+                The lowest grade is 45
+            </pre>
+            <pre id="pointers" class="code-block" style="display: none;">
+                
+                LAB 9.3
+                PROGRAM
+                
+                
+                // Lab 9.3
+                
+                //This program demonstrates the use of dynamic arrays 
+                
+                //Graham Kroll
+                
+                #include &lt;iostream&gt;
+                #include &lt;iomanip&gt;
+                using namespace std;
+                
+                int main()
+                {
+                    float *monthSales = nullptr;
+                
+                    float total = 0.0;
+                    float average;
+                    int numOfSales;
+                    int count;
+                    
+                
+                    cout&lt;&lt; fixed &lt;&lt; showpoint &lt;&lt; setprecision(2);
+                
+                    cout &lt;&lt; "How many monthly sales will be processed? ";
+                    cin >> numOfSales;
+                
+                
+                    //Must be a float because *monthSales is a float variable
+                    monthSales = new float[numOfSales];
+                
+                    //checks if memory has been allocated to the pointer in the array
+                    if (monthSales == nullptr)
+                    {
+                        cout &lt;&lt; "Error allocating memory!\n";
+                        return 1;
+                    }
+                
+                    cout &lt;&lt; "Enter the sales below\n";
+                
+                    for (count = 0; count &lt; numOfSales; count++)
+                    {
+                        cout &lt;&lt; "Sales for month number "
+                            &lt;&lt; (count + 1)
+                            &lt;&lt; ": ";
+                        cin >> *(monthSales + count);
+                    }
+                
+                    for (count = 0; count &lt; numOfSales; count++)
+                    {
+                        total = total + monthSales[count];
+                    }
+                
+                    average = total / numOfSales;
+                
+                    cout &lt;&lt; "Average Monthly sale is $" &lt;&lt; average &lt;&lt; endl;
+                
+                    delete [] monthSales;
+                    monthSales = nullptr;
+                
+                    return 0;
+                }
+                
+                
+                
+                OUTPUT
+                
+                
+                How many monthly sales will be processed? 3
+                Enter the sales below
+                Sales for month number 1: 401.25
+                Sales for month number 2: 352.89
+                Sales for month number 3: 375.05
+                Average Monthly sale is $376.40
+            </pre>
+        </div>        
+    </main>
+    <script src="c++.js"></script>
+    <footer>
+        <div class="footer-box">
+            <div class="blue-footer">
+                <a href="Videos.html">Videos</a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <a href="Achievements.html">Achievements</a>
+        </div>
+        <div class="footer-box">
+            <a href="Contact.html">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>
