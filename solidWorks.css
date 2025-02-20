@@ -36,8 +36,14 @@ h2{
 }
 
 /* Add media query for screens below 768px */
+/* Add media query for screens below 768px */
 @media screen and (max-width: 768px) {
-   .Solidworks-Main{
+   .Solidworks-Main {
        margin-bottom: 10%;
+   }
+
+   .SolidWorks-Project video {
+       width: 100%;
+       height: auto;
    }
 }
