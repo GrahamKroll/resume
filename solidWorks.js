@@ -38,10 +38,5 @@ document.addEventListener("DOMContentLoaded", function () {
             slideIndex++;
             showSlides(id, slideIndex);
         };
-
-        setInterval(() => {
-            slideIndex++;
-            showSlides(id, slideIndex);
-        }, 5000); // Auto-slide every 5 seconds
     });
 });
