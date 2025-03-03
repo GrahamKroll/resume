@@ -26,6 +26,23 @@
    border-radius: 50%;
 }
 
+/* Resume styles*/
+.resume-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 80%; /* Makes sure it doesn't take full width */
+   margin: 10% auto; /* Centers the resume with 10% margin */
+}
+
+.resume-container iframe {
+   width: 100%;
+   height: 75vh; /* Adjust height based on screen */
+   border: none; /* Removes iframe border */
+   border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+
 .skills-table {
    display: flex; /* Use flexbox to align items vertically */
    flex-direction: column; /* Stack items vertically */
