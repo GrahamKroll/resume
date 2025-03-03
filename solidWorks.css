@@ -44,54 +44,55 @@ h2{
 }
 
 /* Gallery styles */
-.gallery-container {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 5%;
-}
-.gallery {
-   width: 60%;
-   margin-bottom: 5%;
-}
+
 .text-box {
    text-align: center;
    margin-bottom: 0;
 }
-
-.text-box h3, .text-box p {
-   margin: 0;
-}
-
+/* Increase the width of the slideshow container */
 .slideshow-container {
    position: relative;
-   width: 100%;
+   width: 90%; /* Increase width for better display */
+   max-width: 1200px; /* Allow larger slideshows */
    height: auto;
    overflow: hidden;
+   margin: 0 auto; /* Center align */
 }
-.slideshow-container iframe {
-   width: 100%; 
-   max-width: 1000px;
-   height: 75vh; 
+
+/* Ensure slides take full width */
+.slide img, .slide video, .slide iframe {
+   width: 100%;
+   height: auto;
+   max-width: 1200px;
+   display: block;
+   margin: 0 auto;
+}
+
+/* Adjust the gallery container */
+.gallery {
+   width: 80%; /* Increase width to fit larger content */
+   max-width: 1200px; /* Set a max width */
+   margin-bottom: 5%;
+}
+
+/* Ensure aspect ratio is maintained for video and iframes */
+.slideshow-container iframe, 
+.slideshow-container video {
+   width: 100%;
+   height: calc(100vw * 9 / 16);
+   max-height: 75vh;
    border-radius: 10px;
    display: block;
    margin: 0 auto;
 }
 
-.slideshow-container video {
-   max-height: 75vh;
-   width: auto;
-   border-radius: 10px;
-}
-
-.slide {
-   display: none;
-   width: 100%;
-   text-align: center;
-}
-.slide img, .slide video, .slide iframe {
+/* Ensure images do not get stretched */
+.slideshow-container img {
    width: 100%;
    height: auto;
+   max-width: 1200px;
+   display: block;
+   margin: 0 auto;
 }
 .prev, .next {
    cursor: pointer;
@@ -119,14 +120,18 @@ h2{
 
 .active { background-color: #717171; }
 
-/* Add media query for screens below 768px */
+/* Adjust responsiveness */
 @media screen and (max-width: 768px) {
-   .Solidworks-Main {
-       margin-bottom: 10%;
+   .gallery {
+       width: 95%; /* Adjust for smaller screens */
    }
-
-   .SolidWorks-Project video {
+   
+   .slideshow-container {
        width: 100%;
-       height: auto;
+   }
+   
+   .slideshow-container iframe, 
+   .slideshow-container video {
+       height: calc(100vw * 9 / 16);
    }
 }
