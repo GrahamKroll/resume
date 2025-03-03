@@ -34,31 +34,64 @@
         <script defer src="dropDownHeader.js"></script>
     </header>
     <main class="Solidworks-Main">
-        <h2> SolidWorks Projects</h2>
-        <section class="SolidWorks-Project">
-            <h3>Gear Box</h3>
-            <p>This is a gear box that was made in individual parts and then assembled. This is the exploded view of the assembly. </p>
-            <video width=auto height="350" autoplay muted>
-                <source src="images/GearBoxComplete_Final.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <!-- Box Mover Prototype -->
+        <section class="gallery">
+            <div class="text-box">
+                <h3>Box Mover Prototype</h3>
+                <p>This project started with the prompt and then went through all the steps of the engineering design process in order to create a fully autonomous device that moves boxes based on their color.</p>
+            </div>
+            <div class="slideshow-container" id="boxMover">
+                <div class="slide fade"><img src="images/boxMover.jpg" alt="Box Mover"></div>
+                <div class="slide fade"><video src="videos/boxMover.mp4" controls></video></div>
+                <div class="slide fade"><iframe src="docs/boxMoverPresentation.pdf"></iframe></div>
+                <div class="slide fade"><iframe src="docs/boxMoverDoc.docx"></iframe></div>
+                <a class="prev" onclick="moveSlide(-1, 'boxMover')">&#10094;</a>
+                <a class="next" onclick="moveSlide(1, 'boxMover')">&#10095;</a>
+                <div class="dots"></div>
+            </div>
         </section>
-        <section class="SolidWorks-Project">
-            <h3>Candlestick</h3>
-            <p>This part is make out of a combination of a revolved boss and a swept boss and filet edges and a extruded cut for the candlestick slot.</p>
-            <img src="images/Cstick.jpg" alt="CandleStick">
+
+        <!-- Quadcopter Prototype -->
+        <section class="gallery">
+            <div class="text-box">
+                <h3>Quadcopter Prototype</h3>
+                <p>In this project, my team and I were tasked to design and create a functioning quadcopter that would fly and land via a remote.</p>
+            </div>
+            <div class="slideshow-container" id="quadcopter">
+                <div class="slide fade"><img src="images/quadcopter.jpg" alt="Quadcopter"></div>
+                <div class="slide fade"><video src="videos/quadcopter.mp4" controls></video></div>
+                <div class="slide fade"><iframe src="docs/quadcopterPresentation.pdf"></iframe></div>
+                <div class="slide fade"><iframe src="docs/quadcopterDoc.docx"></iframe></div>
+                <a class="prev" onclick="moveSlide(-1, 'quadcopter')">&#10094;</a>
+                <a class="next" onclick="moveSlide(1, 'quadcopter')">&#10095;</a>
+                <div class="dots"></div>
+            </div>
         </section>
-        <section class="SolidWorks-Project">
-            <h3>Knob</h3>
-            <p>This part uses numerous filets to create a smooth surface for a knob the could be used on a microwave oven.</p>
-            <img src="images/Knob.jpg" alt="Knob">
-        </section>
-        <section class="SolidWorks-Project">
-            <h3>Muffler Housing</h3>
-            <p>This part is created using a revoloved boss base a single cut that is duplicated using a linear and then circular pattern.</p>
-            <img src="images/mhousing.JPG" alt="Muffler Housing">
+
+        <!-- SolidWorks Projects -->
+        <section class="gallery">
+            <div class="text-box">
+                <h3>SolidWorks Projects</h3>
+                <p>Collection of CAD designs and assemblies created in SolidWorks.</p>
+            </div>
+            <div class="slideshow-container" id="solidworks">
+                <div class="slide fade">
+                    <video width=auto height="350" autoplay muted>
+                    <source src="images/GearBoxComplete_Final.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="slide fade"><img src="images/cStick.jpg" alt="Candlestick"></div>
+                <div class="slide fade"><img src="images/Knob.jpg" alt="Knob"></div>
+                <div class="slide fade"><img src="images/mhousing.JPG" alt="Muffler Housing"></div>
+                <a class="prev" onclick="moveSlide(-1, 'solidworks')">&#10094;</a>
+                <a class="next" onclick="moveSlide(1, 'solidworks')">&#10095;</a>
+                <div class="dots"></div>
+            </div>
         </section>
     </main>
+    <script src="solidWorks.js"> </script>
+</body>    
     <footer>
         <div class="footer-box">
             <div class="blue-footer">
