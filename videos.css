@@ -49,6 +49,16 @@ video {
   border-radius: 10px;
 }
 
+.mySlides iframe {
+   width: 100%; /* Makes the iframe stretch across the container */
+   max-width: 1000px; /* Prevents it from becoming too large */
+   height: 75vh; /* Takes up 75% of the screen height */
+   border-radius: 10px;  /*Optional for rounded corners */
+   display: block;
+   margin: 0 auto; /* Centers the video */
+}
+
+
 /* Next & previous buttons */
 .prev, .next {
    cursor: pointer;
