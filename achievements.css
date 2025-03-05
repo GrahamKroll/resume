@@ -79,6 +79,19 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+.resume-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.resume-container iframe {
+    width: 100%;
+    height: 90vh; /* Keep default height for larger screens */
+    border: none;
+}    
+
 /* Media query for screens under 768px */
 @media screen and (max-width: 768px) {
     .image-wrapper {
@@ -91,5 +104,9 @@
     }
     .image-group{
         display: block;
+    }
+    .resume-container {
+        width: 100vw; /* Take full viewport width */
+        height: 50vh; /* Adjust height for better visibility */
     }
 }
