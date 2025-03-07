@@ -45,6 +45,10 @@ h2{
 
 /* Gallery styles */
 
+img {
+   border-radius: 10px;
+}
+
 .text-box {
    text-align: center;
    margin-bottom: 5%;
@@ -63,6 +67,13 @@ h2{
    margin: 0 auto; /* Center align */
 }
 
+.slide {
+   display: none; /* Hide all slides by default */
+}
+.slide:first-child {
+   display: block; /* Show the first slide initially */
+}
+
 /* Ensure slides take full width */
 .slide img, .slide video, .slide iframe {
    width: 100%;
@@ -70,6 +81,7 @@ h2{
    max-width: 1200px;
    display: block;
    margin: 0 auto;
+   border-radius: 10px;
 }
 
 /* Adjust the gallery container */

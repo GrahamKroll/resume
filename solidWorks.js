@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const slideshows = ["boxMover", "quadcopter", "solidworks"];
+    const slideshows = ["boxMover", "quadcopter", "solidworks", "landRover"];
 
     slideshows.forEach(id => {
         let slideIndex = 0;
