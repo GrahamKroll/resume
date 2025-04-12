@@ -99,6 +99,10 @@ table {
        text-align: center; /* Center text */
    }
 
+   .elite90-section {
+      flex-direction: column-reverse; /* Paragraph on top, image below */
+   }
+
    .headshot {
        width: 50%; /* Adjust width for smaller screens */
        margin-bottom: 10%; /* Add bottom margin */
